@@ -38,7 +38,7 @@ target.test = function () {
   target['test-bundle']();
 
   console.log('Running tests...');
-  run('mocha-phantomjs test/runner.html', true);
+  runSystem('phantomjs ./node_modules/mocha-phantomjs-core/mocha-phantomjs-core.js test/runner.html', true);
 };
 
 target.lint = function () {
@@ -209,6 +209,19 @@ function git (cmd) {
 
 function run (command, loud) {
   var result = exec('"' + pwd() + '/node_modules/.bin/' + '"' + command, {silent: !loud, fatal: false});
+
+  if (result.code !== 0) {
+    if (!options || options.silent) {
+      console.error(result.stdout);
+    }
+    exit(1);
+  }
+
+  return result;
+}
+
+function runSystem (command, loud) {
+  var result = exec(command, {silent: !loud, fatal: false});
 
   if (result.code !== 0) {
     if (!options || options.silent) {
