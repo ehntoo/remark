@@ -56,11 +56,7 @@ body:fullscreen{
   background-color: transparent;
   overflow: auto;
   position: absolute;
-  -webkit-transform-origin: top left;
-  -moz-transform-origin: top left;
-  transform-origin: top-left;
-  -moz-box-shadow: 0 0 30px #888;
-  -webkit-box-shadow: 0 0 30px #888;
+  transform-origin: top left;
   box-shadow: 0 0 30px #888;
 }
 .remark-slide {
@@ -153,8 +149,6 @@ body:fullscreen{
   display: block;
   z-index: 1;
   .remark-slide-scaler {
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
     box-shadow: none;
   }
 }
@@ -226,9 +220,7 @@ body:fullscreen{
   display: none;
   position: absolute;
   z-index: 1000;
-  -webkit-transform-origin: top left;
-  -moz-transform-origin: top left;
-  transform-origin: top-left;
+  transform-origin: top left;
 
   .remark-help-content {
     color: white;
@@ -487,9 +479,8 @@ body:fullscreen{
     position: relative;
   }
   .remark-slide-scaler {
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    -webkit-transform-origin: initial;
+    box-shadow: none;
+    transform-origin: initial;
     box-shadow: none;
   }
 }

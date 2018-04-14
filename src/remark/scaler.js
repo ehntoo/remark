@@ -48,8 +48,7 @@ Scaler.prototype.scaleToFit = function (element, container) {
   left = (containerWidth - scaledWidth) / 2;
   top = (containerHeight - scaledHeight) / 2;
 
-  element.style['-webkit-transform'] = 'scale(' + scale + ')';
-  element.style.MozTransform = 'scale(' + scale + ')';
+  element.style.transform = 'scale(' + scale + ')';
   element.style.left = Math.max(left, 0) + 'px';
   element.style.top = Math.max(top, 0) + 'px';
 };
