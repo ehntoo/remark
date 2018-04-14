@@ -38,7 +38,7 @@ target.test = function () {
   target['test-bundle']();
 
   console.log('Running tests...');
-  runSystem('phantomjs ./node_modules/mocha-phantomjs-core/mocha-phantomjs-core.js test/runner.html', true);
+  run('mocha-headless-chrome -f test/runner.html -a no-sandbox -a disable-setuid-sandbox', true);	
 };
 
 target.lint = function () {
